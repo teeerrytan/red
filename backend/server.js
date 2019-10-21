@@ -138,9 +138,11 @@ app.post('/leave/event', async (req, res) => {
 // get personal events
 app.get('/events', async (req, res) => {
 	try {
-		const { username } = req.body;
-		const userRef = db.ref(`/data/users/${username}`);
-		var eventsSnapshot = await userRef.once('value');
+		const username = req.header('username');
+		const eventsRef = db.ref(`/data/events`);
+		const eventRef = eventsRef.orderByChild("owner").equalTo(username);
+		console.log(eventRef);
+		var eventsSnapshot = await eventRef.once('value');
 		var eventsData = eventsSnapshot.val();
 		res.send(eventsData);
 	} catch (e) {
