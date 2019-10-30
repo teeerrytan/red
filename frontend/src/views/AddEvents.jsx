@@ -104,7 +104,8 @@ class AddEvents extends React.Component {
 											<Col className="pr-1" md="12">
 												<FormGroup>
 													<label>
-														Choose friends to invite (Enter anyone from group Red to try it out!)
+														Choose friends to invite (Enter anyone from group
+														Red to try it out!)
 													</label>
 													<Chips
 														value={this.state.friendsInvited}
@@ -123,7 +124,11 @@ class AddEvents extends React.Component {
 										</Row>
 										<Row>
 											<div className="update ml-auto mr-auto">
-												<Button className="btn-round" color="primary" onClick={{}}>
+												<Button
+													className="btn-round"
+													color="primary"
+													onClick={{}}
+												>
 													Create event!
 												</Button>
 											</div>

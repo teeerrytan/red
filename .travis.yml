@@ -4,6 +4,7 @@ node_js:
 before_install:
   - cd frontend
 after_success:
+  - npm install yarn
   - npm run build
   - npm install -g firebase-tools
   - firebase deploy --token $FIREBASE_TOKEN --non-interactive
